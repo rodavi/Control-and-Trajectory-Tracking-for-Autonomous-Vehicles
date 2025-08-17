@@ -2,7 +2,9 @@
 
 - ![](StartPosition.png)
 - ![](SteerGraph.png)
+- In the steering graph, it is evident that the derivative component played the most significant role in shaping the response. Although there were sudden adjustments in the steering, they were sufficient to keep the car on course and prevent collisions.
 - ![](ThrottleGraph.png)
+- In the throttle graph, it can be observed that the proportional component of the PID responded quickly to compensate for the error, while the derivative component was strong enough to limit overshoot, allowing the system to maintain the desired velocity. However, there is still room for improvement in the parameter tuning, as the braking response of the car was not very smooth. 
 - What is the effect of the PID according to the plots, how each part of the PID affects the control command?
   - The proportional term in a PID controller generates a control signal that is directly proportional to the current error. The impact on control is straightforward: a larger error results in a stronger control action, while a smaller error produces a weaker response. On a plot, the control command increases linearly with the error, meaning the system reacts quickly to large deviations from the setpoint.
   - The integral term in a PID controller addresses accumulated error over time by summing past errors to eliminate steady-state offsets, if the integral gain is too high, it can lead to excessive overshoot and instability due to accumulated error. On a plot, the control signal due to the integral term builds up progressively.
